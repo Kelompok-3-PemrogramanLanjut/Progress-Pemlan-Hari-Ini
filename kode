@@ -1,0 +1,309 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+     static int totalCost;
+     int i,j,choice,c=1,a[9],cost[9];
+     for(i=0;i<9;i++)
+     a[i]=0;
+ 
+     char str[100];
+char items[9][100] = {"Sandisk 16 GB", "Logitech ",    "Pendrive 16 GB", "Adidas",    "Nike",    "Vens",    "Poco X3", "Xiomi Redmi","Samsung X1"};
+     
+      printf("\t\t\t*************************************************\n");
+      printf("\t\t\t*                                               *\n");   
+      printf("\t\t\t*             I/O Shop            *\n");
+      printf("\t\t\t*           *Belanja Puas ,Harga Pas*           *\n");
+      printf("\t\t\t*                                               *\n"); 
+      printf("\t\t\t*************************************************\n");  
+     printf("Silahkan Masukkan Nama Akun Anda : ");
+     gets(str);
+     printf("\n\t//Hallo Kak %s, Selamat datang di Toko Online Kami\\\\\n",str);
+     do
+    {
+            if(c==1)
+        {
+printf("\nMau belanja apa hari ini? \nMasukkan Pilihan Anda : \n1 - Aksesoris Komputer\n2 - Sepatu\n3 - Handphone\nTekan nomor lain untuk Keluar : ");
+          scanf("%d",&choice);
+          switch(choice)
+          {
+             case 1:
+              {
+                    int accessoriesChoice;
+printf("Masukkan Pilihan Anda\n1 - Sandisk 16 GB - Rp.35.000\n2 - Logitech Mouse- Rp.50.000\n3 - Pendrive 16 GB - Rp.55.000\nTekan nomor lain untuk Keluar : ");
+                    scanf("%d",&accessoriesChoice);
+                    cost[0]=35000;
+                    cost[1]=50000;
+                    cost[2]=55000;
+                    switch(accessoriesChoice)
+                    {
+                        case 1:
+                        {
+                              int num;
+                printf("Anda memilih Sandisk 16GB dengan harga Rp.35.000.\nApakah ingin membeli?\n1 - YA\nJika 'Ya' Tekan 1 jika tidak tekan nomor lain : ");
+                              scanf("%d",&num);
+                              if(num==1)
+                              {
+                                   a[0]++;
+                                  totalCost+=35000;
+                              }
+                              printf("Harga belanjaan anda adalah %d\n",totalCost);
+                              break;
+                         }
+                    case 2:
+                    {
+                        int num;
+printf("Anda memilih Logitech Mouse dengan harga Rp.50.000.\nApakah ingin membeli?\n1 - YA\nJika 'Ya' Tekan 1 jika tidak tekan nomor lain : ");
+                        scanf("%d",&num);
+                        if(num==1)
+                        {
+                            a[1]++;
+                            totalCost+=50000;
+                        }
+                        printf("Harga belanjaan anda adalah %d\n",totalCost);
+                        break;
+                         }
+                    case 3:
+                    {
+                        int num;
+printf("Anda memilih Pendrive 16GB dengan Rp.55.000.Apakah ingin membeli?\n1 - YA\nJika 'Ya' Tekan 1 jika tidak tekan nomor lain : ");
+                        scanf("%d",&num);
+                        if(num==1)
+                              {
+                                   a[2]++;
+                                   totalCost+=55000;
+                              }
+                        printf("Harga belanjaan anda adalah %d\n",totalCost);
+                        break;
+                           }
+                    default:
+                    {
+printf("<<<<AKSES DITOLAK>>>>\nKeluar dari aksesoris komputer\n");
+                              break;
+                    }
+                }
+                break;
+            }
+               case 2:
+            {
+                int shoesChoice;
+printf("Masukkan Pilihan\n1 - Adidas - Rp.355.000\n2 - Nike - Rp.500.000\n3 - Vans - Rs.280.000\nTekan nomor lain untuk memilih : ");
+                scanf("%d",&shoesChoice);
+                cost[3]=355000;
+                cost[4]=500000;
+                cost[5]=280000;
+                switch(shoesChoice)
+                {
+                      case 1:
+                         {
+                              int num;
+printf("Anda memilih Sepatu Adidas dengan Rp.355.000.Apakah ingin membeli?\n1 - YA\nJika 'Ya' Tekan 1 jika tidak tekan nomor lain : ");
+                        scanf("%d",&num);
+                        if(num==1)
+                        {
+                            a[3]++;
+                            totalCost+=355000;
+                        }
+printf("Harga belanjaan anda adalah %d\n",totalCost);
+                        break;
+                         }
+                         
+                         case 2:
+                         {
+                              int num;
+                              printf("Anda memilih sepatu Nike dengan Rp.500.000.Apakah ingin membeli?\n1 - YA\nJika 'Ya' Tekan 1 jika tidak tekan nomor lain : ");
+                              scanf("%d",&num);
+                              if(num==1)
+                        {
+                               a[4]++;
+                                   totalCost+=500000;
+                        }
+printf("Harga belanjaan anda adalah %d\n",totalCost);
+                        break;
+                         }
+                         case 3:
+                    {
+                        int num;
+printf("Anda memilih Sepatu Vans dengan Rp.280.000.Apakah ingin membeli?\n1 - YA\nJika 'Ya' Tekan 1 jika tidak tekan nomor lain : ");
+                        scanf("%d",&num);
+                        if(num==1)
+                            {
+                                   a[5]++;
+                                   totalCost+=280000;
+                              }
+printf("Harga belanjaan anda adalah %d\n",totalCost);
+                                  break;
+                             }
+                    default:
+                    {
+printf("<<<<AKSES DITOLAK>>>>\nKeluar dari kategori sepatu\n");
+                    break;
+                    }
+                    }
+                    break;
+                   }
+                   
+            case 3:
+            {
+                int mobileChoice;
+printf("Masukkan pilihan\n1 - Poco  X3 - Rp.1.100.000\n2 - Xiomi Redmi - Rp.2.200.000\n3 - Samsung X1 - Rp.3.280.0000\nTekan nomor lain untuk keluar : ");
+                scanf("%d",&mobileChoice);
+                   cost[6]=1100000;
+                    cost[7]=2200000;
+                    cost[8]=3280000;
+                    switch(mobileChoice)
+                {
+                    case 1:
+                        {
+                            int num;
+printf("Anda memilih Poco x3 dengan Rp.1.100.000.Apakah ingin membeli?\n1 - YA\nJika 'Ya' Tekan 1 jika tidak tekan nomor lain : ");
+                              scanf("%d",&num);
+                              if(num==1)
+                              {
+                                   a[6]++;
+                                   totalCost+=1100000;
+                              }
+printf("Harga belanjaan anda adalah %d\n",totalCost);
+                              break;
+                           }
+                        
+                      case 2:
+                      {
+                        int num;
+printf("Anda memilih Xiomi Redmi dengan Rp.2.200.000.Apakah ingin membeli\n1 - YA\nJika 'Ya' Jika tidak tekan nomor lain : ");
+                              scanf("%d",&num);
+                              if(num==1)
+                              {
+                                   a[7]++;
+                                   totalCost+=2200000;
+                              }
+printf("Harga belanjaan anda adalah %d\n",totalCost);
+                              break;
+                        }
+                        case 3:
+                        {
+                            int num;
+printf("Anda memilih Samsung x1 dengan Rp.3.280.000.Apakah yakin membeli?\n1 - YA\nJika 'Ya' Tekan 1 Jika tidak tekan nomor lain : ");
+                            scanf("%d",&num);
+                            if(num==1)
+                              {
+                                   a[8]++;
+                                   totalCost+=3280000;
+                              }
+printf("Harga belanjaan anda adalah %d\n",totalCost);
+                              break;
+                    }
+                    default:
+                    {
+printf("<<<<AKSES DITOLAK>>>>\nKeluar dari kategori Handphone\n");
+                              break;
+                    }
+                    }
+                    break;
+               }
+            default:
+            {
+            printf("<<<<AKSES DITOLAK>>>>\nMasukkan kode yang benar!!\n");
+            break;
+                   }
+              }
+              printf("Belanjaan anda %s's \n",str);
+            printf("Id\tBarang\t\t\tJumlah\t\tHarga\n");
+              for(i=0;i<9;i++)
+              {
+                   if(a[i]!=0)
+                   {
+                    printf("%d\t%s\t\t%d\t\t%d\n",i,items[i],a[i],(cost[i]*a[i]));
+                   }
+              }
+              printf("Total Harga\t: %d\n",totalCost);
+              printf("Jika ingin membeli lagi masukkan pilihan\n1 - Tambah barang\n2 - Hapus Barang\n3 - Perbaharui jumlah barang\n4 - Checkout\nSilahkan Masukkan Pilihan Anda : ");
+              scanf("%d",&c);
+        }
+        if(c==2)
+        {
+            int id;
+               printf("Masukkan id barang untuk dihapus\n");
+               scanf("%d",&id);
+               if(id<9&&id>0)
+            {
+                   totalCost=totalCost-(cost[id]*a[id]);
+                   a[id]=0;
+               }
+               else
+            {
+                printf("<<<<AKSES DITOLAK>>>>Masukkan id yang benar!!\n");
+               }
+            printf("Barang yang diinginkan \n");
+            printf("Id\tBarang\t\tJumlah\tHarga\n");
+            for(i=0;i<9;i++)
+            {
+                 if(a[i]!=0)
+                  {
+                    printf("%d\t%s\t\t%d\t\t%d\n",i,items[i],a[i],(cost[i]*a[i]));
+                  }
+            }
+            printf("Total Harga\t: %d\n",totalCost);
+             printf("Jika ingin membeli lagi masukkan pilihan\n1 - Tambah barang\n2 - Hapus Barang\n3 - Perbaharui jumlah barang\n4 - Checkout\nSilahkan Masukkan Pilihan Anda : ");
+            scanf("%d",&c);
+        }
+        
+        if(c==3)
+        {
+               int id,quantity;
+               printf("Masukkan id barang untuk memperbaharui jumlah\n");
+               scanf("%d",&id);
+               printf("Masukkan jumlah barang yang diinginkan\n");
+               scanf("%d",&quantity);
+               if(id<9&&id>0)
+            {
+                if(quantity>0 && a[id]>0)
+                {  
+                    if(quantity<a[id]) 
+                    {
+                        int dec=a[id]-quantity;
+                          a[id]=quantity;
+                           totalCost=totalCost-(cost[id]*dec); 
+                     }
+                     if(quantity>a[id]) 
+                     {
+                          int inc=quantity-a[id];
+                          a[id]=quantity;
+                           totalCost=totalCost+(cost[id]*inc); 
+                     }
+                     if(quantity==a[id]) 
+                     {
+                      a[id]=quantity;
+                       totalCost=totalCost+0; 
+                     }       
+                }
+                else
+                {
+                       printf("<<<<AKSES DITOLAK>>>>\nTidak ada barang.Masukkan lagi\n");
+                }
+            }
+            else
+            {
+                   printf("<<<<AKSES DITOLAK>>>>\nId barang tidak ada masukkan lagi!!\n");
+            }
+            printf("Barang yang diinginkan \n");
+            printf("Id\tBarang\t\t\tJumlah\t\tHarga\n");
+            for(i=0;i<9;i++)
+            {
+                if(a[i]!=0)
+                {
+                    printf("%d\t%s\t\t%d\t\t%d\n",i,items[i],a[i],(cost[i]*a[i]));
+                }
+            }
+                printf("Total Harga\t: %d\n",totalCost);
+                printf("Jika ingin membeli lagi masukkan pilihan\n1 - Tambah barang\n2 - Hapus Barang\n3 - Perbaharui jumlah barang\n4 - Checkout\nSilahkan Masukkan Pilihan Anda : ");
+                scanf("%d",&c);
+        }
+    }
+    while(c==1 || c==2 ||c==3);
+        printf("Total keseluruhan harga barang anda adalah %d\n",totalCost);
+        printf("Terima kasih %s telah berkunjung ke toko online kami.\n",str);
+    
+    return 0;
+}
