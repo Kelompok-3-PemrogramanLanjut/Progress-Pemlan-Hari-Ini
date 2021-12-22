@@ -304,6 +304,8 @@ printf("<<<<AKSES DITOLAK>>>>\nKeluar dari kategori Handphone\n");
     while(c==1 || c==2 ||c==3);
         printf("Total keseluruhan harga barang anda adalah %d\n",totalCost);
         printf("Terima kasih %s telah berkunjung ke toko online kami.\n",str);
+        printf("Terima kasih %s semoga kembali lahi.\n")
+        
     
     return 0;
 }
