@@ -1,0 +1,348 @@
+#include<stdio.h>
+#include<string.h>
+#include <stdlib.h>
+
+struct belanja {
+	char nama[30];
+	double harga;
+	char kategori[20];
+} typedef shopping;
+
+struct info_barang {
+	char nama[30];
+	double harga;
+	char cek;
+} typedef brg;
+
+struct klmpk{
+char kategori[20];
+brg member[10];
+
+} typedef ktg;
+
+void i( char inputNama[30], double inputHarga, int i, int j, char y, struct klmpk *b );
+void input_barang();
+void ik();
+int hitung_array( int i, struct klmpk *d);
+void pengurut( char mode, char urut, struct klmpk *input);
+void pencarian( char mode, char inputNama[10], double inputHarga, struct klmpk *y, struct belanja *keranjang);
+void penukaran( int k, int j, struct klmpk *tkr);
+void print( struct klmpk *inp);
+void print_pembelian( double total, int banyak, struct belanja *p);
+void beli( int k, int b, struct belanja *blanja, struct klmpk *input);
+
+void samakan_huruf( char *nama){
+	int i=0;
+	
+	for( i=0; i< strlen( nama); i++){
+	if( i== 0){
+nama[0]= toupper( nama[0]);	
+}
+
+if( nama[i]== ' '){
+nama[i+1]= toupper( nama[i+1]);	
+}
+	}
+	
+	if( i!= 0 && isupper( nama[i])> 0 && nama[i-1]!= ' '){
+	nama[i]= tolower( nama[i]);	
+	}
+}
+
+int main()
+{
+	
+		   int k, b, input;
+		   double harga;
+		   char nama[10], mode;
+   
+	
+   int i=0, menu= 1;
+   ktg barang[10];
+   shopping keranjang[10];
+   
+   input_barang(&barang);
+   
+   char menu1;
+    do{
+   	printf( "\n\nMenu\nA. Lihat barang\nB. Cari Barang\nC. Exit\n\n");
+   	scanf( "%s", &menu1);
+   	switch( menu1){
+   	case 'a':
+	 	  pengurut( 'h', 'a', &barang);
+	 	  
+   		print( &barang);
+   		beli( k, b, &keranjang, &barang);
+		 break;
+   	case 'b':
+   		pencarian( mode, nama, harga, &barang, &keranjang);
+		 break;
+		 case 'c':
+		 	menu= 0;
+		 	break;
+   }
+ 	
+   	
+   	
+   } while( menu== 1);
+
+}
+
+void i( char inputNama[30], double inputHarga, int i, int j, char y, struct klmpk *b  )
+{
+	strcpy( b[i].member[j].nama, inputNama);
+	b[i].member[j].cek= y;
+	b[i].member[j].harga= inputHarga;
+}
+
+void ik( int i, char kategori[20], struct klmpk *d){
+	strcpy( d[i].kategori, kategori);
+}
+
+void input_barang(struct klmpk *a){
+ik( 0, "Perabotan", a);
+ik( 1, "Alat Tulis", a);
+ik( 2, "Keperluan Sekolah", a);
+ik( 3, "Mainan", a);
+ik( 4, "Bumbu Dapur", a);
+ik( 5, "Pakaian", a);
+ik( 6, "Makanan", a);
+	
+i( "Karet", 4000,0, 0, 'y', a);
+i( "Sapu", 10000, 0, 1, 'y', a);
+i( "Buku", 5000, 1, 0, 'y', a);
+i( "Penxsil", 2000,1, 1, 'y', a);
+i( "Pena", 3000, 1, 2, 'y', a);
+i( "Sepatu", 20000,2, 0, 'y', a);
+i( "Bola", 9000, 3, 0, 'y', a);
+i( "Saus", 6000, 4, 0, 'y', a);
+i( "Baju", 30000,5, 0, 'y', a);
+i( "Brownis", 1000, 6, 0, 'y', a);
+i( "Kripik Singkong", 4000, 6, 1, 'y', a);	
+}
+
+
+
+
+int hitung_array( int i, struct klmpk *d){
+int j= 0, k= 0;
+
+do{
+	if( d[i].member[j].cek== 'y'){
+		k= k+ 1;
+	}
+	else{
+		return k;
+		break;}
+	j++;
+
+} while( j>= 0);
+}
+
+void penukaran( int k, int j, struct klmpk *tkr){
+char swap[20];
+double ganti;
+
+ganti= tkr[k].member[j].harga;
+tkr[k].member[j].harga= tkr[k].member[j+1].harga;
+tkr[k].member[j+1].harga= ganti;
+strcpy( swap, tkr[k].member[j].nama);
+strcpy( tkr[k].member[j].nama, tkr[k].member[j+1].nama);
+strcpy( tkr[k].member[j+1].nama, swap);	
+}
+
+void pengurut( char mode, char urut, struct klmpk *input){
+int i, j, k, kunci;
+char sKunci[20], tukar [20];
+
+for( k=0; k<7; k++){
+	;
+for( i=0; i<hitung_array( k, input); i++){
+		if( mode== 'h'){
+	kunci= input[k].member[i].harga;
+}
+else if( mode== 'n'){
+	strcpy( sKunci, input[k].member[i].nama);}
+	j= i-1;
+	if( urut== 'a'){
+		if( mode== 'h'){
+	while( j>= 0&& input[k].member[j].harga> kunci){
+	penukaran( k, j, input);
+	j= j-1;
+	input[k].member[j+1].harga= kunci;
+	}
+	}
+	else if( mode== 'n'){
+	while( j>= 0&& input[k].member[j].nama[0]> sKunci[0]){
+	penukaran( k, j, input);
+	j= j-1;
+	strcpy( input[k].member[j+1].nama, sKunci);
+	}	
+	}
+	
+}
+	else if( urut== 'd'){
+	if( mode== 'h'){
+	while( j>= 0&& input[k].member[j].harga< kunci){
+	penukaran( k, j, input);
+	j= j-1;
+	input[k].member[j+1].harga= kunci;
+	}
+	}
+	else if( mode== 'n'){
+	while( j>= 0&& input[k].member[j].nama[0]< sKunci[0]){
+	penukaran( k, j, input);
+	j= j-1;
+	strcpy( input[k].member[j+1].nama, sKunci);
+	}	
+	}
+	}
+	}	
+}
+}
+
+void print( struct klmpk *inp){
+int i= 0, p=0;
+
+for( p=0; p<7; p++){
+	printf( "\n%s", inp[p].kategori);
+	printf( " -> %d\n\n", p+1);
+do {
+	if( inp[p].member[i].cek== 'y'){
+printf( "%d. ", i+1);
+printf( "Nama\t\t: %s", inp[p].member[i].nama);
+printf( "\n   Harga\t: %.f\n\n" , inp[p].member[i].harga);
+}
+else{ break;}
+i++;
+} while( i>= 0);
+printf( "\n");
+i=0;
+}
+}
+
+
+
+void print_pembelian( double total, int banyak, struct belanja *p){
+int i=0;
+	
+for( i=0; i<banyak; i++){
+		 printf( "Nama\t\t: %s", p[i].nama);
+		printf( "\nHarga\t\t: %.f\n\n" , p[i].harga);	
+}
+printf( "Total bayar = %.f", total);
+
+}
+
+void beli( int k, int b, struct belanja *blanja, struct klmpk *input){
+int i=0, konfirm= 1;
+double total=0, bayar=0;
+
+do{
+printf( "Masukan kode kategori : ");
+scanf( "%d", &k);
+printf( "Masukan kode barang : ");
+scanf( "%d", &b);
+
+k= k- 1;
+b= b- 1;
+	strcpy( blanja[i].nama, input[k].member[b].nama);
+	blanja[i].harga= input[k].member[b].harga;
+	total= total+ input[k].member[b].harga;
+
+printf( "\nJika ingin membeli barang lain lagi, ketik 1. Jika tidak ketik angka lain : ");
+scanf( "%d", &konfirm);
+printf( "\n");
+i+= 1;
+} while( konfirm== 1);
+system("cls");
+print_pembelian( total, i, blanja);
+
+	printf("\nKetikkan pembayaran Anda : ");
+	scanf( "%lf", &bayar);
+	if( bayar>= total){
+	printf( "\nKembalian Anda = %.f", bayar= bayar-total);
+}
+else{
+printf( "\nMaaf, uang Anda tidak cukup");	
+}
+	}
+
+
+void pencarian( char mode, char inputNama[10], double inputHarga, struct klmpk *y, struct belanja *keranjang){
+	int i=0, j=0, confirm=2, v=0, z;
+	char konfir;
+	double total=0, bayar;
+
+while( confirm== 2){
+printf( "A. nama\nB. Harga\n\n");
+scanf( "%s", &mode);
+
+if( mode== 'a' || mode== 'b'){
+if( mode== 'a'){
+printf( "Masukan nama : ");
+fflush( stdin);
+gets( inputNama);
+samakan_huruf( inputNama);
+inputHarga= 123;
+}
+else if( mode== 'b'){
+printf( "Masukan harga : ");
+scanf( "%lf", &inputHarga);
+inputNama= '*';
+}
+pengurut( 'h', 'a', y);
+
+for( i=0; i<7; i++){
+j=0;
+while( y[i].member[j].cek== 'y'){
+if(mode== 'a' && strcmp( y[i].member[j].nama, inputNama)== 0){system("cls");
+confirm= 9;
+
+}
+else if(mode== 'b' && y[i].member[j].harga== inputHarga){system("cls");
+	confirm= 9;
+
+}
+if( confirm== 9){
+printf( "Nama\t: %s\nHarga\t: %.f", y[i].member[j].nama, y[i].member[j].harga);
+printf( "\n\nIngin menambahkan %s ke keranjang? Ketik y jika iya : ", y[i].member[j].nama);
+scanf( "%s", &konfir);
+if( konfir== 'y'){
+strcpy( keranjang[v].nama, y[i].member[j].nama);
+keranjang[v].harga= y[i].member[j].harga;
+total= total+ y[i].member[j].harga;
+printf( "\nPembelian telah berhasil.");
+printf( "\n\n");
+print_pembelian( total, v+1, keranjang);
+v++;
+}
+	printf( "\n\nApakah ingin membeli lagi?\nKetik 2 jika iya. Jika tidak ketik 1\n\n");
+	scanf( "%d", &confirm);	
+	if( confirm== 1){
+	printf("\nKetikkan pembayaran Anda : ");
+	scanf( "%lf", &bayar);
+	if( bayar>= total){
+	printf( "\nKembalian Anda = %.f", bayar= bayar-total);
+}
+else{
+printf( "\nMaaf, uang Anda tidak cukup");	
+}
+	}
+	
+}
+
+j++;
+}
+if( i== 6&& confirm== 0){
+printf( "Maaf, barang tidak ada");	
+}
+if( confirm==1){
+break;
+}
+}
+}
+}
+}
+
+
