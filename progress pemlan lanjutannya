@@ -100,25 +100,25 @@ void ik( int i, char kategori[20], struct klmpk *d){
 }
 
 void input_barang(struct klmpk *a){
-ik( 0, "Perabotan", a);
-ik( 1, "Alat Tulis", a);
-ik( 2, "Keperluan Sekolah", a);
-ik( 3, "Mainan", a);
-ik( 4, "Bumbu Dapur", a);
-ik( 5, "Pakaian", a);
-ik( 6, "Makanan", a);
+ik( 0, "Mouse", a);
+ik( 1, "RAM", a);
+ik( 2, "Laptop Asus", a);
+ik( 3, "Laptop Macbook", a);
+ik( 4, "Monitor ", a);
+ik( 5, "Headset", a);
+ik( 6, "Keyboard", a);
 	
-i( "Karet", 4000,0, 0, 'y', a);
-i( "Sapu", 10000, 0, 1, 'y', a);
-i( "Buku", 5000, 1, 0, 'y', a);
-i( "Penxsil", 2000,1, 1, 'y', a);
-i( "Pena", 3000, 1, 2, 'y', a);
-i( "Sepatu", 20000,2, 0, 'y', a);
-i( "Bola", 9000, 3, 0, 'y', a);
-i( "Saus", 6000, 4, 0, 'y', a);
-i( "Baju", 30000,5, 0, 'y', a);
-i( "Brownis", 1000, 6, 0, 'y', a);
-i( "Kripik Singkong", 4000, 6, 1, 'y', a);	
+i( "Mouse Wireless", 1000000,0, 0, 'y', a);
+i( "Mouse Wired", 500000, 0, 1, 'y', a);
+i( "Corsair Dominator RGB", 1500000, 1, 0, 'y', a);
+i( "RAM G Skill", 1600000,1, 1, 'y', a);
+i( "RAM T Force Zeus", 800000, 1, 2, 'y', a);
+i( "ASUS TUF FX 506iv", 18000000,2, 0, 'y', a);
+i( "Macbook M1 Max", 70000000, 3, 0, 'y', a);
+i( "AlienWare AW 252 1H", 6500000, 4, 0, 'y', a);
+i( "HyperX Cloud S", 1200000,5, 0, 'y', a);
+i( "SteelSeries Apex Pro TKL", 3000000, 6, 0, 'y', a);
+i( "Razer Huntsman V2", 2300000, 6, 1, 'y', a);	
 }
 
 
