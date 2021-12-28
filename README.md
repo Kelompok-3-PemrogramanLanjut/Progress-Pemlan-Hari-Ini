@@ -22,6 +22,11 @@ Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, P
 -
 -
 
+## Data yang digunakan
+- Nama Barang (Nama Produk)
+- Harga Barang
+- Total Harga Barang
+- Kategori Barang (Elektronik atau Fashion)
 
 ## TAMPILAN PROGRAM
 #### MENU AWAL 
