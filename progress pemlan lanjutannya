@@ -28,8 +28,10 @@ void pengurut( char mode, char urut, struct klmpk *input);
 void pencarian( char mode, char inputNama[10], double inputHarga, struct klmpk *y, struct belanja *keranjang);
 void penukaran( int k, int j, struct klmpk *tkr);
 void print( struct klmpk *inp);
-void print_pembelian( double total, int banyak, struct belanja *p);
 void beli( int k, int b, struct belanja *blanja, struct klmpk *input);
+void konfir_beli( struct belanja *blanja, char barang[20], double harga, int *v, char *confirm, double *total, char cek);
+
+void file( double total, double biaya, double kembalian, int banyak, struct belanja *blj);
 
 void samakan_huruf( char *nama){
 	int i=0;
@@ -55,7 +57,6 @@ int main()
 		   int k, b, input;
 		   double harga;
 		   char nama[10], mode;
-   
 	
    int i=0, menu= 1;
    ktg barang[10];
@@ -69,9 +70,8 @@ int main()
    	scanf( "%s", &menu1);
    	switch( menu1){
    	case 'a':
-	 	  pengurut( 'h', 'a', &barang);
+ 	  	pengurut( 'h', 'a', &barang);
 	 	  
-   		print( &barang);
    		beli( k, b, &keranjang, &barang);
 		 break;
    	case 'b':
@@ -85,7 +85,6 @@ int main()
    	
    	
    } while( menu== 1);
-
 }
 
 void i( char inputNama[30], double inputHarga, int i, int j, char y, struct klmpk *b  )
@@ -98,6 +97,7 @@ void i( char inputNama[30], double inputHarga, int i, int j, char y, struct klmp
 void ik( int i, char kategori[20], struct klmpk *d){
 	strcpy( d[i].kategori, kategori);
 }
+
 
 void input_barang(struct klmpk *a){
 ik( 0, "Mouse", a);
@@ -120,8 +120,6 @@ i( "HyperX Cloud S", 1200000,5, 0, 'y', a);
 i( "SteelSeries Apex Pro TKL", 3000000, 6, 0, 'y', a);
 i( "Razer Huntsman V2", 2300000, 6, 1, 'y', a);	
 }
-
-
 
 
 int hitung_array( int i, struct klmpk *d){
@@ -221,24 +219,12 @@ i=0;
 }
 }
 
-
-
-void print_pembelian( double total, int banyak, struct belanja *p){
-int i=0;
-	
-for( i=0; i<banyak; i++){
-		 printf( "Nama\t\t: %s", p[i].nama);
-		printf( "\nHarga\t\t: %.f\n\n" , p[i].harga);	
-}
-printf( "Total bayar = %.f", total);
-
-}
-
 void beli( int k, int b, struct belanja *blanja, struct klmpk *input){
-int i=0, konfirm= 1;
-double total=0, bayar=0;
+int confirm= 2;
+double total=0, v=0;
 
 do{
+print( input);
 printf( "Masukan kode kategori : ");
 scanf( "%d", &k);
 printf( "Masukan kode barang : ");
@@ -246,33 +232,20 @@ scanf( "%d", &b);
 
 k= k- 1;
 b= b- 1;
-	strcpy( blanja[i].nama, input[k].member[b].nama);
-	blanja[i].harga= input[k].member[b].harga;
-	total= total+ input[k].member[b].harga;
 
-printf( "\nJika ingin membeli barang lain lagi, ketik 1. Jika tidak ketik angka lain : ");
-scanf( "%d", &konfirm);
-printf( "\n");
-i+= 1;
-} while( konfirm== 1);
-system("cls");
-print_pembelian( total, i, blanja);
+konfir_beli( blanja, input[k].member[b].nama, input[k].member[b].harga, &v, &confirm, &total, 'v');
+if( confirm== 1){
+break;	
+}
+} while( confirm== 2);
 
-	printf("\nKetikkan pembayaran Anda : ");
-	scanf( "%lf", &bayar);
-	if( bayar>= total){
-	printf( "\nKembalian Anda = %.f", bayar= bayar-total);
-}
-else{
-printf( "\nMaaf, uang Anda tidak cukup");	
-}
 	}
 
 
 void pencarian( char mode, char inputNama[10], double inputHarga, struct klmpk *y, struct belanja *keranjang){
 	int i=0, j=0, confirm=2, v=0, z;
+	double total=0;
 	char konfir;
-	double total=0, bayar;
 
 while( confirm== 2){
 printf( "A. nama\nB. Harga\n\n");
@@ -305,44 +278,101 @@ else if(mode== 'b' && y[i].member[j].harga== inputHarga){system("cls");
 
 }
 if( confirm== 9){
-printf( "Nama\t: %s\nHarga\t: %.f", y[i].member[j].nama, y[i].member[j].harga);
-printf( "\n\nIngin menambahkan %s ke keranjang? Ketik y jika iya : ", y[i].member[j].nama);
-scanf( "%s", &konfir);
-if( konfir== 'y'){
-strcpy( keranjang[v].nama, y[i].member[j].nama);
-keranjang[v].harga= y[i].member[j].harga;
-total= total+ y[i].member[j].harga;
-printf( "\nPembelian telah berhasil.");
-printf( "\n\n");
-print_pembelian( total, v+1, keranjang);
-v++;
+konfir_beli( &keranjang, y[i].member[j].nama, y[i].member[j].harga, &v, &confirm, &total, 'v');
+i=0;if( confirm==1){konfir='s';};
+confirm=1;
+break;
 }
-	printf( "\n\nApakah ingin membeli lagi?\nKetik 2 jika iya. Jika tidak ketik 1\n\n");
-	scanf( "%d", &confirm);	
-	if( confirm== 1){
-	printf("\nKetikkan pembayaran Anda : ");
-	scanf( "%lf", &bayar);
-	if( bayar>= total){
-	printf( "\nKembalian Anda = %.f", bayar= bayar-total);
-}
-else{
-printf( "\nMaaf, uang Anda tidak cukup");	
-}
-	}
-	
-}
-
 j++;
 }
-if( i== 6&& confirm== 0){
-printf( "Maaf, barang tidak ada");	
+if( i== 6&& y[i].member[j].nama!= inputNama){
+printf( "\nMaaf, barang yang dicari tidak ada");
+konfir_beli( &keranjang, y[i].member[j].nama, y[i].member[j].harga, &v, &confirm, &total, 'y');	
+if( confirm== 8){
+confirm= 1;
+break;	
+}
 }
 if( confirm==1){
+confirm=2;
 break;
 }
 }
 }
+if( konfir== 's'){ break;}
 }
 }
 
+void file( double total, double biaya, double kembalian, int banyak, struct belanja *blj){
+	 FILE *p;
+   p= fopen( "Cetak Pembelian.txt", "w");
+	 int i= 0;
+	 
+	fputs( "-------- Detail Pembelian --------\n", p); 
+	 for( i=0 ;i<banyak; i++){
+	fputs( blj[i].nama, p);
+	fputs( "\t\t: ", p);
+	fprintf( p, "%.f\n", blj[i].harga);
+}
+	fprintf( p, "\nTotal\t\t: %.f\n", total);
+	fprintf( p, "Pembayaran\t: %.f\n", biaya);
+	fprintf( p, "Kembalian\t: %.f\n", kembalian);
+	fclose( p);
+}
 
+void konfir_beli( struct belanja *blanja, char barang[20], double harga, int *v, char *confirm, double *total, char cek){
+	char konfir;
+	int i=0;
+	double bayar;
+if( cek!='y'){
+printf( "Nama\t: %s\nHarga\t: %.f", barang, harga);
+printf( "\n\nIngin menambahkan %s ke keranjang? Ketik y jika iya : ", barang);
+scanf( " %c", &konfir);
+if( konfir== 'y'){
+strcpy( blanja[*v].nama, barang);
+blanja[*v].harga= harga;
+*total+= harga;
+system( "cls");
+printf( "\nPembelian telah berhasil.");
+printf( "\n\n");
+*v+= 1;
+for( i=0; i<*v; i++){
+		 printf( "Nama\t\t: %s", blanja[i].nama);
+		printf( "\nHarga\t\t: %.f\n\n" , blanja[i].harga);
+}
+printf( "Total bayar = %.f", *total);
+
+}
+else{*confirm=5;}}
+if( *confirm!=5){
+	printf( "\n\nApakah ingin membeli lagi?\nKetik y jika iya. Jika tidak ketik n\n\n");
+	scanf( " %c", &konfir);	
+	system("cls");
+	if( konfir== 'n'){if( *total!=0){
+		for( i=0; i<*v; i++){
+		 printf( "Nama\t\t: %s", blanja[i].nama);
+		printf( "\nHarga\t\t: %.f\n\n" , blanja[i].harga);
+}
+printf( "Total bayar = %.f", *total);
+	printf("\nKetikkan pembayaran Anda : ");
+	scanf( "%lf", &bayar);
+	if( bayar>= *total){
+	printf( "\nKembalian Anda = %.f", bayar-*total);
+	for( i=0; i<*v; i++){
+		file( *total, bayar, bayar-*total, *v, blanja);	
+}
+}
+else{
+printf( "\nMaaf, uang Anda tidak cukup");
+}
+*confirm= 1;}
+if( cek== 'y'){
+*confirm= 8;
+	}
+	}
+	else if( konfir== 'y'){
+	*confirm= 2;	
+	}}
+	else {system( "cls");*confirm=1;printf( "\nPembelian Terbatalkan");};
+	
+}	
