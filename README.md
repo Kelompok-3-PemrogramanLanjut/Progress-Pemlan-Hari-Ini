@@ -7,17 +7,17 @@
 - Sri Fuji Santoso            ( 20081010184 ) 
 - Yogie Wilvren Saragih	      ( 20081010050 )
 
-## Deskripsi Program 
+## DESKRIPSI PROGRAM
 Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, Program ini akan menampilkan daftar barang beserta harga. Pembeli dapat memilih barang yang ingin dibeli, kemudian program akan men-total harga seluruhnya. Barang akan diantarkan ke rumah dan pembayaran dilakukan secara cash on delivery.
 
-## Tampilan Program
-### Menu Awal 
+## TAMPILAN PROGRAM
+### MENU AWAL
 ![Pemlan1](https://user-images.githubusercontent.com/89886668/147528900-69fd79ba-0502-4f0b-808f-8685e248d04f.jpg)
 
-### Pilihan Barang
+### PILIHAN BARANG
 ![Pemlan2](https://user-images.githubusercontent.com/89886668/147528947-51566981-6706-4e3d-8b00-5b9b4ebee184.jpg)
 
 ![Pemlan2b](https://user-images.githubusercontent.com/89886668/147528976-79235a8e-d647-40c8-862e-84f41eb34a4b.jpg)
 
-### Tampilann Transaksi Barang 
+### TAMPILAN TRANSAKSI BARANG
 ![Pemlan3](https://user-images.githubusercontent.com/89886668/147529585-f89d75e5-042d-4b5b-9c13-26329b57709c.jpg)
