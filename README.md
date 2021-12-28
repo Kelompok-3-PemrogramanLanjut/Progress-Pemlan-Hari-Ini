@@ -18,3 +18,6 @@ Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, P
 ![Pemlan2](https://user-images.githubusercontent.com/89886668/147528947-51566981-6706-4e3d-8b00-5b9b4ebee184.jpg)
 
 ![Pemlan2b](https://user-images.githubusercontent.com/89886668/147528976-79235a8e-d647-40c8-862e-84f41eb34a4b.jpg)
+
+### Tampilann Transaksi Barang 
+![Pemlan3](https://user-images.githubusercontent.com/89886668/147529585-f89d75e5-042d-4b5b-9c13-26329b57709c.jpg)
