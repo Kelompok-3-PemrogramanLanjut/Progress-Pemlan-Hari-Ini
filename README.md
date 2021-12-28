@@ -12,6 +12,17 @@
 ## DESKRIPSI PROGRAM
 Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, Program ini akan menampilkan daftar barang beserta harga. Pembeli dapat memilih barang yang ingin dibeli, kemudian program akan men-total harga seluruhnya. Barang akan diantarkan ke rumah dan pembayaran dilakukan secara cash on delivery.
 
+## DATA YANG DIGUNAKAN
+- 
+- 
+- 
+-
+-
+-
+-
+-
+
+
 ## TAMPILAN PROGRAM
 #### MENU AWAL 
 - User atau pengguna dapat memilih dari 3 menu yang tersedia pada pilihan di tampilan menu, pilihan A untuk melihat jumlah barang, pilihan B untuk mencari barang yang diinginkan dan C untuk keluar dari program.
