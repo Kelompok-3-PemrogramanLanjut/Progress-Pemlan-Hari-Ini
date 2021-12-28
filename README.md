@@ -11,10 +11,13 @@
 Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, Program ini akan menampilkan daftar barang beserta harga. Pembeli dapat memilih barang yang ingin dibeli, kemudian program akan men-total harga seluruhnya. Barang akan diantarkan ke rumah dan pembayaran dilakukan secara cash on delivery.
 
 ## TAMPILAN PROGRAM
-### MENU AWAL
+#### MENU AWAL 
+- User atau pengguna dapat memilih dari 3 menu yang tersedia pada pilihan di tampilan menu, pilihan A untuk melihat jumlah barang, pilihan B untuk mencari barang yang diinginkan dan C untuk keluar dari program.
+
 ![Pemlan1](https://user-images.githubusercontent.com/89886668/147528900-69fd79ba-0502-4f0b-808f-8685e248d04f.jpg)
 
-### PILIHAN BARANG
+#### PILIHAN BARANG
+- Setelah user atau pengguna memilih jawaban A maka program langsung memunculkan barang barang yang tersedia di toko yang diurutkan berdasarkan tipe atau jenis elektronik yang diinginkan seperti Mouse, Laptop, Keyboar dan sebagainya
 ![Pemlan2](https://user-images.githubusercontent.com/89886668/147528947-51566981-6706-4e3d-8b00-5b9b4ebee184.jpg)
 
 ![Pemlan2b](https://user-images.githubusercontent.com/89886668/147528976-79235a8e-d647-40c8-862e-84f41eb34a4b.jpg)
