@@ -12,4 +12,9 @@ Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, P
 
 ## Tampilan Program
 ### Menu Awal 
-![Clipboar(0)](https://user-images.githubusercontent.com/89886668/147528820-b201a39f-2e9b-4e4e-a07b-314a357b660b.jpg)
+![Pemlan1](https://user-images.githubusercontent.com/89886668/147528900-69fd79ba-0502-4f0b-808f-8685e248d04f.jpg)
+
+### Pilihan Barang
+![Pemlan2](https://user-images.githubusercontent.com/89886668/147528947-51566981-6706-4e3d-8b00-5b9b4ebee184.jpg)
+
+![Pemlan2b](https://user-images.githubusercontent.com/89886668/147528976-79235a8e-d647-40c8-862e-84f41eb34a4b.jpg)
