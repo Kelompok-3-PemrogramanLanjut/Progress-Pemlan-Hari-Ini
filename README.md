@@ -12,22 +12,16 @@
 ## DESKRIPSI PROGRAM
 Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, Program ini akan menampilkan daftar barang beserta harga. Pembeli dapat memilih barang yang ingin dibeli, kemudian program akan men-total harga seluruhnya. Barang akan diantarkan ke rumah dan pembayaran dilakukan secara cash on delivery.
 
-## DATA YANG DIGUNAKAN
-- 
-- 
-- 
--
--
--
--
--
-
 ## Data yang digunakan
 - Nama Barang (Nama Produk)
 - Harga Barang
 - Total Harga Barang
 - Kategori Barang (Elektronik atau Fashion)
 - Kembalian
+
+## METODE YANG DITERAPKAN
+- Sorting : Insertion Sorting
+- Searching : Linear Searching
 
 ## TAMPILAN PROGRAM
 #### MENU AWAL 
