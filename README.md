@@ -7,3 +7,5 @@
 - Sri Fuji Santoso            ( 20081010184 ) 
 - Yogie Wilvren Saragih	      ( 20081010050 )
 
+## Deskripsi Program 
+Program tersebut akan menampilkan daftar barang beserta harga. Pembeli dapat memilih barang yang ingin dibeli, kemudian program akan men-total harga seluruhnya. Barang akan diantarkan ke rumah dan pembayaran dilakukan secara cash on delivery.
