@@ -1,5 +1,7 @@
 # APLIKASI TOKO ONLINE : ELEKTRONIK 
 
+![Pemlan3f](https://user-images.githubusercontent.com/89886668/147531152-3c70c136-98d2-47df-908f-b4e6732bf137.jpg)
+
 ## Anggota Kelompok
 - Ahmad Maghfur ‘Ali	        ( 20081010055 )
 - Derma Setya Graha		        ( 20081010176 )
