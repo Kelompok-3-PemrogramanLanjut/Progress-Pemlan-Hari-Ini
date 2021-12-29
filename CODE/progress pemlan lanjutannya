@@ -31,6 +31,7 @@ void print( struct klmpk *inp);
 void beli( int k, int b, struct belanja *blanja, struct klmpk *input);
 void konfir_beli( struct belanja *blanja, char barang[20], double harga, int *v, char *confirm, double *total, char cek);
 
+
 void file( double total, double biaya, double kembalian, int banyak, struct belanja *blj);
 
 void samakan_huruf( char *nama){
@@ -363,7 +364,7 @@ printf( "Total bayar = %.f", *total);
 }
 }
 else{
-printf( "\nMaaf, uang Anda tidak cukup");
+printf( "\nMaaf, uang Anda tidak cukup untuk membeli");
 }
 *confirm= 1;}
 if( cek== 'y'){
@@ -373,6 +374,6 @@ if( cek== 'y'){
 	else if( konfir== 'y'){
 	*confirm= 2;	
 	}}
-	else {system( "cls");*confirm=1;printf( "\nPembelian Terbatalkan");};
+	else {system( "cls");*confirm=1;printf( "\nPembelian Anda Terbatalkan");};
 	
 }	
