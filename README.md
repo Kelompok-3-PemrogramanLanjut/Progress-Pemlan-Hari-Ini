@@ -29,11 +29,10 @@ Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, P
 - Pembayaran Barang
 - Total Belanja Barang
 - Kembalian dari Pembelian
-- 
 
 ## TAMPILAN PROGRAM
 #### MENU AWAL 
-- User atau pengguna dapat memilih dari 3 menu yang tersedia pada pilihan di tampilan menu, pilihan A untuk melihat jumlah barang, pilihan B untuk mencari barang yang diinginkan dan C untuk keluar dari program.
+- User atau pengguna dapat memilih dari 3 menu yang tersedia pada pilihan di tampilan menu, pilihan A untuk melihat jumlah barang, pilihan B untuk mencari barang yang diinginkan dan C untuk keluar dari program tersebut.
 
 ![Pemlan1](https://user-images.githubusercontent.com/89886668/147528900-69fd79ba-0502-4f0b-808f-8685e248d04f.jpg)
 
@@ -47,7 +46,7 @@ Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, P
 ![Pemlan3](https://user-images.githubusercontent.com/89886668/147529585-f89d75e5-042d-4b5b-9c13-26329b57709c.jpg)
 
 ### TAMPILAN TRANSAKSI BARANG DAN MENAMBAH BARANG
-- Setelah user memilih barang barang tesebut akan muncul dan keluiar harganya
+- Setelah user memilih barang barang tesebut akan muncul dan keluar harganya
 
 ![Pemlan3](https://user-images.githubusercontent.com/89886668/147529585-f89d75e5-042d-4b5b-9c13-26329b57709c.jpg)
 
@@ -77,13 +76,13 @@ Program pembelian dan belanja secara online ini atau bisa kita sebut I/O Shop, P
 
 ![Pemlan4](https://user-images.githubusercontent.com/89886668/147624453-49ec9236-ef0f-4b0c-9cfd-ead6108a6332.jpg)
 
-- Memasukkan nama barang yang dicari
+- Memasukkan nama barang yang ingin dicari
 
 ![Pemlan4a](https://user-images.githubusercontent.com/89886668/147624566-a0d83f96-6de0-4caf-97ca-ee7ef3811565.jpg)
 
 
 ### CETAK STRUCT
-- Mencetak struct pembelian 
+- Mencetak struct pembelian dengan format .txt
 
 ![Pemlan5](https://user-images.githubusercontent.com/89886668/147624700-c54365bb-b2e3-4115-b86e-a4dce3579951.jpg)
 
